@@ -62,8 +62,9 @@ Figure 56. Comparison of methods (i) Chain-of-Thought (8-shot in our experiments
 
 At this point, the question that naturally arises is ‘are CoT failures the same as failures by the declarative approach, or do they solve different problems?’, which is considered relevant given that, in the first case, we could be facing a limitation of the model regarding its capacity to solve certain problems (due to lack of understanding, or difficulty to model it, among others), but in the second, the model would be able to solve them if the appropriate tool is chosen, deciding for its analysis to compare the answers of both models, with the resulting heatmap presented in [Figure 57].
 
-<img width="608" height="511" alt="Figure 57" src="https://github.com/user-attachments/assets/75ca14b4-44c1-4b4b-814f-16fbd1ae3627" />
-
+<p align="center">
+    <img width="608" height="511" alt="Figure 57" src="https://github.com/user-attachments/assets/75ca14b4-44c1-4b4b-814f-16fbd1ae3627" />
+</p>
 Figure 57. Heatmap of hits and failures of Mixtral-8x7b-instruct-Q5_0 for methods 8-shot CoT and 8-shot (4 positives + 4 negatives) + 8 principles Declarative + adapted code, on the complete test split of the GSM8K dataset.
 
 From the heatmap, and notably, an important percentage (254 + 227 = 481 or ~36.5% of the 1319 problems) is observed solved by one or the other of the techniques, but not both, which is considered promising regarding two lines of research, such as (i) the choice of one technique or the other according to the problem (prior to its resolution) or (ii) the choice of one or the other answer, after its resolution by both techniques.
