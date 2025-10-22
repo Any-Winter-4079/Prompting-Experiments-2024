@@ -56,9 +56,13 @@ Table 53. Evaluation summary of Mixtral-8x7b-instruct-Q5_0, on the complete test
 
 From these, an increase (and a certain convergence toward) accuracy up to values close to those obtained by CoT is observed, as the principles, code, and few-shot examples are adapted to the abilities of Mixtral-8x7b-instruct-Q5_0 (as opposed to those presented in the paper, probably tuned to its evaluated model, code-davinci-002), although despite this, the conclusion is noticed and supported that, still, the benefit obtained with the declarative method seems model-dependent and, in no case, surpasses in these experiments the CoT performance on GSM8K, with a graphical summary of the results obtained visible in [Figure 56].
 
+<img width="1063" height="639" alt="Figure 56" src="https://github.com/user-attachments/assets/730d9c6d-c875-4d0d-846f-183f26ae0968" />
+
 Figure 56. Comparison of methods (i) Chain-of-Thought (8-shot in our experiments and 5-shot from the Mixtral of Experts paper, in this case on Mixtral 8x7B without quantization) and (ii) 5 Declarative variants, on the complete test split of the GSM8K dataset, with Mixtral-8x7b-instruct-Q5_0 as the model and at temperatures 0.8 and 0 (greedy decoding).
 
 At this point, the question that naturally arises is ‘are CoT failures the same as failures by the declarative approach, or do they solve different problems?’, which is considered relevant given that, in the first case, we could be facing a limitation of the model regarding its capacity to solve certain problems (due to lack of understanding, or difficulty to model it, among others), but in the second, the model would be able to solve them if the appropriate tool is chosen, deciding for its analysis to compare the answers of both models, with the resulting heatmap presented in [Figure 57].
+
+<img width="608" height="511" alt="Figure 57" src="https://github.com/user-attachments/assets/75ca14b4-44c1-4b4b-814f-16fbd1ae3627" />
 
 Figure 57. Heatmap of hits and failures of Mixtral-8x7b-instruct-Q5_0 for methods 8-shot CoT and 8-shot (4 positives + 4 negatives) + 8 principles Declarative + adapted code, on the complete test split of the GSM8K dataset.
 
@@ -73,6 +77,8 @@ However, after a new question —see ‘are CoT failures with a certain seed the
 |  15 |   966 | CoT<br>(8-shot)                |         0.8 |           58.6 |                          11,767.26 |                                              8.92 |
 
 Table 54. Evaluation summary of Mixtral-8x7b-instruct-Q5_0, on the complete test split of the GSM8K dataset, showing accuracy and execution time obtained experimentally under 8-shot CoT with seeds 966, 1,337 and 7,625, and at temperature 0.8.
+
+<img width="1275" height="359" alt="Figure 58" src="https://github.com/user-attachments/assets/c8c5990b-b80c-4cd7-bb0d-5c2dcd4bed06" />
 
 Figure 58. Heatmap of hits and failures of Mixtral-8x7b-instruct-Q5_0 for 8-shot CoT with seeds 966, 1337 and 7625, and on the complete test split of the GSM8K dataset.
 
