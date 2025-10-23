@@ -4,21 +4,33 @@ Needs [llama-cpp](https://github.com/ggml-org/llama.cpp) and [llama-cpp-python](
 
 ## How to reproduce the experiments
 
-### Version 1
+Clone llama.cpp and `git checkout` the same commit if needed:
+
+```
+cd computer/LLM
+git clone https://github.com/ggml-org/llama.cpp.git
+cd llama.cpp
+git checkout 213701b5
+```
+
+Place your model(s) under `llama.cpp/models`, e.g.:
+
+```
+llama.cpp/models/Phi-3-mini-4k-instruct-gguf/Phi-3-mini-4k-instruct-fp16.gguf
+llama.cpp/models/Phi-3-mini-4k-instruct-gguf/Phi-3-mini-4k-instruct-q4.gguf
+```
+
+And test running the model(s):
+
+```
+make -j && ./llama-cli -m models/Phi-3-mini-4k-instruct-gguf/Phi-3-mini-4k-instruct-fp16.gguf -p "Building a website can be done in 10 simple steps:\nStep 1:" -n 400 -e
+```
+
+To test inference methods, run:
 
 ```
 python CoT_Dec_PAL_tester_v1.py
-```
-
-### Version 2
-
-```
 python CoT_Dec_PAL_tester_v2.py
-```
-
-### Version 3
-
-```
 python CoT_Dec_PAL_tester_v3.py
 ```
 
