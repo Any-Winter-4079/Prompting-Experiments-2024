@@ -36,7 +36,7 @@ python CoT_Dec_PAL_tester_v3.py
 
 ## Results summary
 
-[Please note the following is an LLM translation of part of a chapter written in Spanish]
+[Please note the following is an excerpt of a chapter]
 
 [...]
 
